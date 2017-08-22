@@ -14,13 +14,10 @@ void setup() {
   for (int i = 0; i < NUM_PARTICLES; i++) {
     particles.add(new Particle(random(0, PIPE_WIDTH), random(0, PIPE_HEIGHT)));
   }
-  
-  //waves.add(new PressureWave(100.0));
 }
 
 void draw() {
   background(255);
-
   for (PressureWave wave : waves) {
     wave.update(); 
     wave.render();
