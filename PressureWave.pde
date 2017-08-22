@@ -6,7 +6,7 @@ class PressureWave {
   }
 
   float waveSpeed(float x) {
-    return -sqrt(getProp(x).temperature) / 20;
+    return sqrt(getProp(x).temperature) / 20;
   }
   
   void updateProperties() {
