@@ -9,15 +9,15 @@ class Particle {
     this.y = y;
   }
   
-  void update(int bulkVel) {
+  void update() {
     noiseX += 0.021;
     noiseY += 0.051;
-    x += bulkVel;
+    x += FLUID_VEL;
   }
   
   void render() {
     noStroke();
     fill(255);
-    ellipse((x + noise(noiseX) * 10 - 5) % 1500, (y + noise(noiseY) * 10 - 5) % 500, RADIUS, RADIUS);
+    ellipse((x + noise(noiseX) * 10 - 5) % PIPE_WIDTH + wave.displacement(x), (y + noise(noiseY) * 10 - 5) % PIPE_HEIGHT, RADIUS, RADIUS);
   }
 }
