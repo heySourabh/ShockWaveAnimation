@@ -25,7 +25,9 @@ class Particle {
 
   void render() {
     noStroke();
-    fill(map(getProp(x).temperature, minTempr-1, maxTempr+1, 200, 150), 20, 20);    
+    color hot = color(255, 0, 0);
+    color cold = color(255, 102, 102);
+    fill(lerpColor(cold, hot, map(getProp(x).temperature, minTempr-1, maxTempr+1, 0, 1)));    
     ellipse((x + noise(noiseX) * 10 - 5) + displacement / maxDisplacement * 10, (y + noise(noiseY) * 10 - 5) % PIPE_HEIGHT, RADIUS, RADIUS);
   }
 }
