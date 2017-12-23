@@ -14,7 +14,7 @@ ArrayList<PressureWave> waves = new ArrayList<PressureWave>();
 boolean paused = false;
 
 void setup() {
-  size(1200, 300, FX2D);
+  size(1200, 300);
   surface.setTitle("Shock wave formation demo - Created by Sourabh Bhat");
   surface.setResizable(false);
 
@@ -53,6 +53,8 @@ void draw() {
       p.render();
     }
   }
+  
+  //saveFrame("frames/####.png");
 }
 
 void resetProps() {
